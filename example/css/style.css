@@ -1,12 +1,12 @@
     :root {
-            --g: #123d2e;
+            --g: #0c3e26; /*#123d2e*/
             --cream: #f7f5eb;
             --sage: #e5ebdb;
-            --gold: #946332;
-            --orange: #b35331;
-            --text: #244537;
-            --muted: #657264;
-            --line: #d5dccb
+            --gold: #d9a14a; /*#946332*/
+            --orange: #9f552e; /*#b35331*/
+            --text: #0c3e26; /*#244537*/
+            --muted: #75594b; /*#657264*/
+            --line: #d5dccb;
         }
 
         * {
@@ -198,7 +198,7 @@
         }
 
         .btn.gold {
-            background: #e1c38e;
+            background: var(--gold); /* //TODO #e1c38e*/
             color: var(--g);
             border-color: #e1c38e
         }
@@ -258,7 +258,7 @@
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: #749558
+            background: var(--orange); /*#749558*/
         }
 
         header {
@@ -577,11 +577,11 @@
         }
 
         .dark .eyebrow {
-            color: #d9bd89
+            color: var(--gold) /* //TODO #d9bd89 */
         }
 
         .dark h2 em {
-            color: #d9bd89
+            color: var(--gold) /* //TODO #d9bd89*/
         }
 
         .dark .lead,
@@ -612,7 +612,7 @@
             justify-content: space-between;
             font-size: 10px;
             letter-spacing: 1px;
-            color: #d1dfca
+            color: #d1dfca /*#d1dfca*/
         }
 
         .progress {
@@ -1125,7 +1125,7 @@
 
         footer {
             background: var(--g);
-            color: var(--cream);
+            color: var(--gold); /* //TODO --cream*/
             padding: 45px 0
         }
 
@@ -1138,7 +1138,7 @@
 
         .footer-top p {
             font-size: 12px;
-            color: #c4d4be;
+            color: var(--gold); /* //TODO #c4d4be*/
             max-width: 390px
         }
 
@@ -1162,7 +1162,7 @@
             padding-top: 25px;
             margin-top: 30px;
             font-size: 11px;
-            color: #d4dec9
+            color: var(--sage); /* //TODO #d4dec9*/
         }
 
         .footer-links button {
