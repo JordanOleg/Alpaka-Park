@@ -285,7 +285,7 @@
         }
 
         .brand img {
-            width: 53px;
+            width: 60px;
             height: 58px;
             object-fit: cover;
             mix-blend-mode: multiply
@@ -1506,8 +1506,8 @@
             }
 
             .brand img {
-                width: 43px;
-                height: 47px
+                width: 48px;
+                height: 48px
             }
 
             .brand small {
