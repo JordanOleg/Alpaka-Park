@@ -116,7 +116,7 @@
                 </div>
                 <aside><b>ВАЖЛИВО ЗНАТИ</b>
                     <p id="audience-note">Конкретні програми, вікові умови, тривалість і календар погоджуватимуться під час підготовки Центру.</p>
-                        <button class="textbtn" id="audience-cta">Дізнатися про сімейні формати ↗</button>
+                <button class="textbtn" id="audience-cta">Дізнатися про сімейні формати ↗</button>                       
                 </aside>
             </div>
         </section>
@@ -397,11 +397,43 @@
                 <div>
                     <h2>Концепція<br><em>у 20 слайдах.</em></h2>
                 </div>
-                <button class="textbtn" id="all-slides">Показати всі слайди ↓</button>
             </div>
             <p class="muted">Оригінальні матеріали презентації. Відкрийте слайд для перегляду; цифри, міжнародні
                 твердження й статуси на слайдах відтворені як матеріал автора, без незалежної перевірки.</p>
-            <div class="slides-grid" id="slides-grid"></div>
+            <div class="carousel" id="carousel" role="region" aria-roledescription="карусель" aria-label="Слайди презентації" data-autoplay-ms="">
+                <button class="car-arrow car-prev" id="car-prev" type="button" aria-label="Попередні слайди">
+                    <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="car-viewport">
+                    <ul class="car-track" id="car-track" tabindex="0" aria-label="Слайди. Стрілки вліво/вправо — гортати, пробіл — пауза автогортання">
+                    <li class="car-slide"><img src="src/presentation/slide-01.jpg" alt="Слайд 1: Обкладинка" loading="eager" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-02.jpg" alt="Слайд 2: Проєкт в одному слайді" loading="eager" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-03.jpg" alt="Слайд 3: Чому зараз" loading="eager" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-04.jpg" alt="Слайд 4: Історія ініціативи" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-05.jpg" alt="Слайд 5: Чому альпаки" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-06.jpg" alt="Слайд 6: Соціальна місія" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-07.jpg" alt="Слайд 7: Формати взаємодії" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-08.jpg" alt="Слайд 8: Міський простір" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-09.jpg" alt="Слайд 9: Програмний підхід" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-10.jpg" alt="Слайд 10: Функціональні зони" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-11.jpg" alt="Слайд 11: Доступність" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-12.jpg" alt="Слайд 12: Безпека й добробут" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-13.jpg" alt="Слайд 13: Міжнародний досвід" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-14.jpg" alt="Слайд 14: Соціальний ефект" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-15.jpg" alt="Слайд 15: Фінансова стійкість" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-16.jpg" alt="Слайд 16: Команда" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-17.jpg" alt="Слайд 17: Що вже зроблено" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-18.jpg" alt="Слайд 18: Дорожня карта" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-19.jpg" alt="Слайд 19: Партнерство з містом" loading="lazy" draggable="false"></li>
+                    <li class="car-slide"><img src="src/presentation/slide-20.jpg" alt="Слайд 20: Простір добрих змін" loading="lazy" draggable="false"></li>
+                    </ul>
+                    <span class="car-status" id="car-status" role="status" aria-live="polite"></span>
+                </div>
+                <button class="car-arrow car-next" id="car-next" type="button" aria-label="Наступні слайди">
+                    <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false"><path d="m9 4 8 8-8 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="car-dots" id="car-dots" role="group" aria-label="Сторінки каруселі"></div>
+            </div>
         </section>
         <section class="wrap" id="faq">
             <div class="eyebrow">13 / Запитання</div>
@@ -482,8 +514,13 @@
                 <input id="email" name="email" type="email" autocomplete="email" required>
                 <label for="direction">Напрям</label>
                 <select id="direction" name="direction">
-                <option>Загальні питання</option>Сімейні формати</option>Соціальні програми</option>Освітня взаємодія
-                </option>Територія та реалізація</option>Партнерство</option>Підтримка проєкту</option>
+                <option>Загальні питання</option>
+                <option>Сімейні формати</option>
+                <option>Соціальні програми</option>
+                <option>Освітня взаємодія</option>
+                <option>Територія та реалізація</option>
+                <option>Партнерство</option>
+                <option>Підтримка проєкту</option>
             </select><label for="comment">Коротко про ваш запит <span
                     class="muted">(необов’язково)</span></label><textarea id="comment" name="comment"
                 maxlength="1200"></textarea><label class="consent"><input id="consent" type="checkbox"
