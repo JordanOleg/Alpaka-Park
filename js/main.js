@@ -312,24 +312,24 @@ let currentSlide = 0;
 
     const behavior = () => reduced ? 'auto' : 'smooth';
     const stepPx = () => slidesEls.length > 1 ? slidesEls[1].offsetLeft - slidesEls[0].offsetLeft : track.clientWidth;
-    const perView = () => Math.max(1, Math.round(track.clientWidth / stepPx()));
-    const pageCount = () => Math.ceil(slidesEls.length / perView());
     const maxScroll = () => track.scrollWidth - track.clientWidth;
+    const lastIndex = () => Math.max(0, Math.ceil(maxScroll() / stepPx() - 0.01));   // крайня позиція (по 1 слайду)
 
-    function currentPage() {
-        if (track.scrollLeft >= maxScroll() - 2) return pageCount() - 1;
-        return Math.min(pageCount() - 1, Math.round(track.scrollLeft / stepPx() / perView()))
+    function currentIndex() {
+        if (track.scrollLeft >= maxScroll() - 2) return lastIndex();
+        return Math.min(lastIndex(), Math.max(0, Math.round(track.scrollLeft / stepPx())))
     }
-    const here = () => pending ?? currentPage();
+    const here = () => pending ?? currentIndex();
 
-    function goPage(p) {
-        p = Math.max(0, Math.min(pageCount() - 1, p));
-        pending = p; clearTimeout(pendingTimer); pendingTimer = setTimeout(() => pending = null, 800);
-        track.scrollTo({ left: Math.min(p * perView() * stepPx(), maxScroll()), behavior: behavior() });
+    function goIndex(i) {
+        i = Math.max(0, Math.min(lastIndex(), i));
+        pending = i; clearTimeout(pendingTimer); pendingTimer = setTimeout(() => pending = null, 800);
+        track.scrollTo({ left: Math.min(i * stepPx(), maxScroll()), behavior: behavior() });
+        updateUi(i);
         schedule()
     }
-    function next() { const p = here(); goPage(p >= pageCount() - 1 ? 0 : p + 1) }
-    function prev() { const p = here(); goPage(p <= 0 ? pageCount() - 1 : p - 1) }
+    function next() { const i = here(); goIndex(i >= lastIndex() ? 0 : i + 1) }
+    function prev() { const i = here(); goIndex(i <= 0 ? lastIndex() : i - 1) }
 
     /* ---- автогортання ---- */
     function schedule() {
@@ -346,27 +346,36 @@ let currentSlide = 0;
         schedule()
     }
 
-    /* ---- крапки ---- */
-    function updateUi() {
-        const p = currentPage();
-        [...dotsBox.children].forEach((d, i) => i === p ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current'))
+    /* ---- крапки: стрічка, активна — по центру, сусідні дрібніші й блідіші ---- */
+    let dotEls = [], dotsTrack = null;
+    function updateUi(forced) {
+        const a = typeof forced === 'number' ? forced : here();
+        dotsBox.style.setProperty('--active', a);
+        dotEls.forEach((d, i) => {
+            d.dataset.d = Math.min(Math.abs(i - a), 6);          // відстань від активної → розмір/прозорість у CSS
+            if (i === a) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current')
+        })
     }
     function buildDots() {
         dotsBox.replaceChildren();
-        for (let i = 0; i < pageCount(); i++) {
+        dotsTrack = document.createElement('div'); dotsTrack.className = 'car-dots-track';
+        const n = lastIndex() + 1;
+        dotEls = [];
+        for (let i = 0; i < n; i++) {
             const d = document.createElement('button');
             d.type = 'button'; d.className = 'car-dot';
-            d.setAttribute('aria-label', 'Сторінка ' + (i + 1) + ' з ' + pageCount());
-            d.onclick = () => goPage(i);
-            dotsBox.append(d)
+            d.setAttribute('aria-label', 'Слайд ' + (i + 1) + ' з ' + n);
+            d.onclick = () => goIndex(i);
+            dotEls.push(d); dotsTrack.append(d)
         }
+        dotsBox.append(dotsTrack);
         updateUi()
     }
 
-    /*  */
+    /* ---- керування ---- */
     $('#car-prev').onclick = prev;
     $('#car-next').onclick = next;
-    track.addEventListener('scroll', updateUi, { passive: true });
+    track.addEventListener('scroll', () => updateUi(), { passive: true });
     track.addEventListener('click', e => {
         const slide = e.target.closest('.car-slide');
         if (!slide) return;
