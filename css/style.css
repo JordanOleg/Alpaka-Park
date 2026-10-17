@@ -1060,7 +1060,8 @@
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
             scrollbar-width: none;
-            overscroll-behavior-x: contain
+            overscroll-behavior-x: contain;
+            align-items: center;
         }
 
         .car-track::-webkit-scrollbar {
@@ -1075,8 +1076,8 @@
 
         .car-slide img {
             width: 100%;
-            aspect-ratio: 1.43;
-            object-fit: cover;
+            display: block;
+            height: auto;
             border-radius: 12px;
             user-select: none;
             -webkit-user-drag: none
