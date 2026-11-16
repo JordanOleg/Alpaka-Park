@@ -406,6 +406,7 @@
             <symbol id="i-sprout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10.5S7.5 8 7.5 5.3a2.3 2.3 0 0 1 4.5-.8 2.3 2.3 0 0 1 4.5.8C16.5 8 12 10.5 12 10.5z"/><path d="M12 10.5v6M12 16.5v3"/><path d="M12 16.5C8.5 17.1 5.5 16 4.5 13 8 12 11 13 12 16.5zM12 16.5C15.5 17.1 18.5 16 19.5 13 16 12 13 13 12 16.5z"/></symbol>
             <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
             <!-- декоративна гілка -->
+            <!-- 
             <symbol id="i-branch" viewBox="0 0 240 190">
                 <path d="M238 2C196 18 154 50 116 96 86 132 52 160 6 186" fill="none" stroke="#c9a561" stroke-width="2" stroke-linecap="round"/>
                 <g fill="#7fae67">
@@ -419,6 +420,7 @@
                     <path transform="translate(48 156) rotate(20)" d="M0 0C8-16 32-20 50-4 40 14 14 18 0 0z" fill="#a4c98a"/>
                 </g>
             </symbol>
+            -->
         </defs>
     </svg>
             <svg class="dirs-leaf dirs-leaf--tr" viewBox="0 0 240 190" aria-hidden="true" focusable="false"><use href="#i-branch"/></svg>
@@ -516,61 +518,127 @@
 
             <!-- ВКЛАДКА 2. Фото: src/activity/. ЗАМІНІТЬ тексти й фото на реальні заходи ГО. -->
             <div class="dirs-panel" id="dp1" role="tabpanel" aria-labelledby="dt1" tabindex="0" data-dpanel hidden
-                 data-label="Наша діяльність" data-cta="0" data-disclaimer="">
-                <div class="dirs-grid">
+                data-label="Наша діяльність" data-cta="0" data-disclaimer="">
+                <div class="dirs-grid dirs-grid--photos">
                     <article class="dir-card">
-                        <div class="dir-photo"><img src="src/activity/activity-01.jpg" alt="Фото заходу 1" loading="lazy"></div>
-                        <div class="dir-info">
-                            <span class="dir-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-cal"/></svg></span>
-                            <div class="dir-text"><h3>Назва заходу</h3><p>Дата · коротка підпис до фото</p></div>
-                            <button class="dir-go" type="button" aria-label="Детальніше: Назва заходу"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button>
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ГО_Альпака_реабилитация_1.jpg" alt="Опис фото" loading="lazy">
                         </div>
-                        <template><p>Опис заходу, результати та фотографії. Замініть цей текст на реальний.</p></template>
                     </article>
                     <article class="dir-card">
-                        <div class="dir-photo"><img src="src/activity/activity-02.jpg" alt="Фото заходу 2" loading="lazy"></div>
-                        <div class="dir-info">
-                            <span class="dir-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-cal"/></svg></span>
-                            <div class="dir-text"><h3>Назва заходу</h3><p>Дата · коротка підпис до фото</p></div>
-                            <button class="dir-go" type="button" aria-label="Детальніше: Назва заходу"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button>
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ГО_Альпака_реабилитация_2.jpg" alt="Опис фото" loading="lazy">
                         </div>
-                        <template><p>Опис заходу, результати та фотографії. Замініть цей текст на реальний.</p></template>
                     </article>
                     <article class="dir-card">
-                        <div class="dir-photo"><img src="src/activity/activity-03.jpg" alt="Фото заходу 3" loading="lazy"></div>
-                        <div class="dir-info">
-                            <span class="dir-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-cal"/></svg></span>
-                            <div class="dir-text"><h3>Назва заходу</h3><p>Дата · коротка підпис до фото</p></div>
-                            <button class="dir-go" type="button" aria-label="Детальніше: Назва заходу"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button>
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ГО_Альпака_реабилитация_3.jpg" alt="Опис фото" loading="lazy">
                         </div>
-                        <template><p>Опис заходу, результати та фотографії. Замініть цей текст на реальний.</p></template>
                     </article>
                     <article class="dir-card">
-                        <div class="dir-photo"><img src="src/activity/activity-04.jpg" alt="Фото заходу 4" loading="lazy"></div>
-                        <div class="dir-info">
-                            <span class="dir-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-cal"/></svg></span>
-                            <div class="dir-text"><h3>Назва заходу</h3><p>Дата · коротка підпис до фото</p></div>
-                            <button class="dir-go" type="button" aria-label="Детальніше: Назва заходу"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button>
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ГО_Альпака_реабилитация_4.jpg" alt="Опис фото" loading="lazy">
                         </div>
-                        <template><p>Опис заходу, результати та фотографії. Замініть цей текст на реальний.</p></template>
                     </article>
                     <article class="dir-card">
-                        <div class="dir-photo"><img src="src/activity/activity-05.jpg" alt="Фото заходу 5" loading="lazy"></div>
-                        <div class="dir-info">
-                            <span class="dir-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-cal"/></svg></span>
-                            <div class="dir-text"><h3>Назва заходу</h3><p>Дата · коротка підпис до фото</p></div>
-                            <button class="dir-go" type="button" aria-label="Детальніше: Назва заходу"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button>
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ГО_Альпака_реабилитация_5.jpg" alt="Опис фото" loading="lazy">
                         </div>
-                        <template><p>Опис заходу, результати та фотографії. Замініть цей текст на реальний.</p></template>
                     </article>
                     <article class="dir-card">
-                        <div class="dir-photo"><img src="src/activity/activity-06.jpg" alt="Фото заходу 6" loading="lazy"></div>
-                        <div class="dir-info">
-                            <span class="dir-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-cal"/></svg></span>
-                            <div class="dir-text"><h3>Назва заходу</h3><p>Дата · коротка підпис до фото</p></div>
-                            <button class="dir-go" type="button" aria-label="Детальніше: Назва заходу"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button>
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ГО_Альпака_реабилитация_6.jpg" alt="Опис фото" loading="lazy">
                         </div>
-                        <template><p>Опис заходу, результати та фотографії. Замініть цей текст на реальний.</p></template>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ГО_Альпака_реабилитация_7.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ГО_Альпака_реабилитация_8.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ГО_Альпака_реабилитация_9.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ГО_Альпака_реабилитация_10.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_1.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_2.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_3.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_4.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_5.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_6.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_7.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_8.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_9.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_10.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_11.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/child/ГО_Альпака_альпакатерапия_реабилитация_дети_12.jpg" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ai_create/ai_cr_alpaka_1.png" alt="Опис фото" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="dir-card">
+                        <div class="dir-photo">
+                            <img src="src/photo/activity/ai_create/ai_cr_alpaka_2.png" alt="Опис фото" loading="lazy">
+                        </div>
                     </article>
                 </div>
                 <div class="dirs-foot">
@@ -578,9 +646,7 @@
                     <a class="btn" href="#history">Дізнатися більше <span aria-hidden="true">→</span></a>
                 </div>
             </div>
-
-            <!-- Слайди презентації: джерело для вікна «Переглянути слайд» (кнопки data-slide).
-                 На сторінці не показуються й не завантажуються, поки вікно не відкрите. -->
+            <!-- 
             <ul id="slides-data" hidden>
                 <li><img width="1400" height="981" src="src/presentation/slide-01.jpg" alt="Слайд 1: Обкладинка" loading="lazy" draggable="false"></li>
                 <li><img width="1400" height="988" src="src/presentation/slide-02.jpg" alt="Слайд 2: Проєкт в одному слайді" loading="lazy" draggable="false"></li>
@@ -603,6 +669,7 @@
                 <li><img width="1400" height="971" src="src/presentation/slide-19.jpg" alt="Слайд 19: Партнерство з містом" loading="lazy" draggable="false"></li>
                 <li><img width="1392" height="991" src="src/presentation/slide-20.jpg" alt="Слайд 20: Простір добрих змін" loading="lazy" draggable="false"></li>
             </ul>
+            -->
         </section>
         <!--   
         <section class="wrap section-rule" id="presentation"> 

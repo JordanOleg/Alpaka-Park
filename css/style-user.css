@@ -1539,6 +1539,14 @@
             }
         }
 
+        .dirs-grid--photos .dir-info {
+            display: none
+        }
+
+        .dirs-grid--photos .dir-photo::after {
+            display: none
+        }
+
         details {
             border-bottom: 1px solid var(--line);
             padding: 22px 0
