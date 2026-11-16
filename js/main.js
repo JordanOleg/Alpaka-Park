@@ -289,10 +289,39 @@ $('#quiz-back').onclick = () => {
 };
 renderQuiz();
 /* ------------------ Слайди: джерело правди — розмітка (#car-track) ------------------ */
-const slideImgs = $$('#car-track img');
+const slideImgs = $$('#slides-data img');   // джерело слайдів для вікна «Переглянути слайд» (прихований список у розділі #directions)
 const slides = slideImgs.map(im => im.getAttribute('src'));
 const slideTitles = slideImgs.map(im => im.alt.replace(/^Слайд \d+:\s*/, ''));
 let currentSlide = 0;
+
+/* ------------------------- Напрями підтримки (блок 12) -------------------------
+   Вкладки «Програми підтримки» / «Наша діяльність» + вікно «Детальніше».
+   Текст вікна беремо з <template> усередині картки; заголовок — з її <h3>.
+   ------------------------------------------------------------------------- */
+(function directions() {
+    const tabs = $$('[data-dtab]'), panels = $$('[data-dpanel]');
+    if (!tabs.length) return;
+    function setTab(i) {
+        tabs.forEach((b, j) => { b.setAttribute('aria-selected', i === j); b.tabIndex = i === j ? 0 : -1 });
+        panels.forEach((p, j) => p.hidden = i !== j)
+    }
+    tabs.forEach((b, i) => b.onclick = () => setTab(i));
+    tabsKeys('[data-dtab]', setTab);
+
+    $$('.dir-go').forEach(b => b.onclick = () => {
+        const card = b.closest('.dir-card'), panel = b.closest('[data-dpanel]');
+        const tpl = card.querySelector('template');
+        const note = panel.dataset.disclaimer ? '<p class="muted">' + panel.dataset.disclaimer + '</p>' : '';
+        detail(card.querySelector('h3').textContent, (tpl ? tpl.innerHTML : '') + note, panel.dataset.label, panel.dataset.cta === '1')
+    });
+
+    // якщо фото ще немає / шлях невірний — показуємо м’який зелений фон замість «битої» іконки
+    const miss = img => img.classList.add('is-missing');
+    $$('.dir-photo img').forEach(img => {
+        img.addEventListener('error', () => miss(img));
+        if (img.complete && img.naturalWidth === 0) miss(img)
+    })
+})();
 
 /* ------------------------------- Карусель -------------------------------
    ПК:      стрілки ‹ › ; клік по слайду — пауза / відновлення автогортання.
